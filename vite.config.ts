@@ -11,7 +11,9 @@ export default defineConfig({
     vue(),
     svgLoader({ svgo: false, defaultImport: "component" }),
     tsconfigPaths(),
-    eslintPlugin(),
+    eslintPlugin({
+      exclude: [/virtual:/, /node_modules/],
+    }),
   ],
   resolve: {
     alias: [
@@ -24,4 +26,5 @@ export default defineConfig({
   server: {
     port: 8080,
   },
+  assetsInclude: ["/sb-preview/runtime.js"],
 });
