@@ -8,7 +8,7 @@
 - 공통 컴포넌트 요소 확인
 - 예제로 해당 버튼을 공통 컴포넌트화 진행
   - https://www.figma.com/file/6Tu7H514UE9JcZyPffyKjw/20231222_CHUKAPOKA?type=design&node-id=115-297&mode=design&t=yY4klqb7fdU1AfJM-4
-  <!-- - ![target-button](./screenshots/target-button.png) -->
+  - ![target-button](./screenshots/target-button.png)
 
 ### 1.2 element-plus에서 참고할 컴포넌트 찾기
 
@@ -34,7 +34,7 @@
 - `assets/variables.scss`
 - 필요한 경우, `.storybook/main.ts`, `.storybook/preview.ts`의 설정 참고(element-plus, scss 적용)
 
-  <!-- - ![target-button-result](./screenshots/target-button-result.png) -->
+  - ![target-button-result](./screenshots/target-button-result.png)
 
 ## 2. Svg Icon Vue 컴포넌트화
 
@@ -44,8 +44,8 @@
 - 공통 컴포넌트 요소 확인
 - 예제로 해당 아이콘을 컴포넌트화 진행
   - https://www.figma.com/file/6Tu7H514UE9JcZyPffyKjw/20231222_CHUKAPOKA?type=design&node-id=114-162&mode=design&t=yY4klqb7fdU1AfJM-4
-    <!-- - ![target-icon](./screenshots/target-icon.png) -->
-    <!-- - ![target-icon2](./screenshots/target-icon2.png) -->
+    - ![target-icon](./screenshots/target-icon.png)
+    - ![target-icon2](./screenshots/target-icon2.png)
 
 ### 2.2 아이콘 Vue 컴포넌트화
 
@@ -66,7 +66,7 @@
   - npm run storybook
 - 필요한 경우, `.storybook/IconExample.tsx`의 설정 참고
 
-  <!-- - ![target-icon-result](./screenshots/target-icon-result.png) -->
+  - ![target-icon-result](./screenshots/target-icon-result.png)
 
 # 3. `containers` 등 복합 컴포넌트
 
