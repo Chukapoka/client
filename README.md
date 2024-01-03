@@ -45,12 +45,13 @@
 - 예제로 해당 아이콘을 컴포넌트화 진행
   - https://www.figma.com/file/6Tu7H514UE9JcZyPffyKjw/20231222_CHUKAPOKA?type=design&node-id=114-162&mode=design&t=yY4klqb7fdU1AfJM-4
   - ![target-icon](./screenshots/target-icon.png)
+  - ![target-icon2](./screenshots/target-icon2.png)
 
 ### 2.2 아이콘 Vue 컴포넌트화
 
 - `components/commons/images`에 Vue 컴포넌트 생성
 - 해당 아이콘 `Copy as SVG`로 Copy
-  - ![target-icon-cpoy](./screenshots/target-icon-copy.png)
+  - ![target-icon-copy](./screenshots/target-icon-copy.png)
 - `<template>`에 복붙
 - `currentColor`, `fill` 등 스타일 지정이 필요한 경우 `props` 등을 추가
 
@@ -58,10 +59,14 @@
 
 ### 예제 결과물 확인
 
-- components/commons/images/CpLogo.vue
+- `components/commons/images/CpLogo.vue`
+- `components/commons/images/IconAlert.vue`
   - npm i && npm run dev
-- components/commons/images/Iconography.mdx
+- `components/commons/images/Iconography.stories.mdx`
   - npm run storybook
+- 필요한 경우, `.storybook/IconExample.tsx`의 설정 참고
+
+  - ![target-icon-result](./screenshots/target-icon-result.png)
 
 # 3. `containers` 등 복합 컴포넌트
 

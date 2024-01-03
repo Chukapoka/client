@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
 import ElementPlus from "unplugin-element-plus/vite";
+import path from "path";
+
 import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
@@ -13,6 +15,9 @@ const config: StorybookConfig = {
     name: "@storybook/vue3-vite",
     options: {},
   },
+  core: {
+    builder: "@storybook/builder-vite",
+  },
   docs: {
     autodocs: "tag",
   },
@@ -20,8 +25,11 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     return mergeConfig(config, {
       plugins: [ElementPlus({})],
-      modules: {},
-      assetsInclude: ["/sb-preview/runtime.js"],
+      resolve: {
+        alias: {
+          "@": path.resolve(__dirname, "../src"),
+        },
+      },
     });
   },
 };
