@@ -12,8 +12,8 @@
         <tree-type class="tree-icon" />
         <template v-for="(treeItem, idx) in treeItemList" :key="idx">
           <tree-item
-            class="tree-item"
-            :text="treeItem.title"
+            class="-item"
+            :text="`${treeItem.title} ${idx}`"
             :style="getTreeItemPosition(idx)"
           />
         </template>
@@ -52,11 +52,11 @@ const treeSize = computed(() => {
 const treeItemList = [
   {
     id: "treeItem1",
-    title: "재형이에게",
+    title: "재형에게",
   },
   {
     id: "treeItem2",
-    title: "현진이에게",
+    title: "현진에게",
   },
   {
     id: "treeItem3",
@@ -66,7 +66,32 @@ const treeItemList = [
     id: "treeItem4",
     title: "승연에게",
   },
+  {
+    id: "treeItem5",
+    title: "승연에게",
+  },
+  {
+    id: "treeItem6",
+    title: "승연에게",
+  },
+  {
+    id: "treeItem7",
+    title: "승연에게",
+  },
+  {
+    id: "treeItem8",
+    title: "승연에게",
+  },
+  {
+    id: "treeItem9",
+    title: "승연에게",
+  },
+  {
+    id: "treeItem10",
+    title: "승연에게",
+  },
 ];
+// const treeItemDivisionList = [2,6];
 
 watch(treeSize, () => {
   console.log(treeSize.value);
@@ -75,13 +100,23 @@ watch(treeSize, () => {
 const getTreeItemPosition = (idx: number) => {
   if (idx === 0) {
     return {
-      top: "0px",
+      top: "-30px",
       left: `${treeSize.value.width / 2 - 30}px`, // 정중앙
+    };
+  } else if (idx <= 2) {
+    return {
+      top: `${(treeSize.value.height / 4) * 1 - 80}px`,
+      left: `${(treeSize.value.width / 4) * (idx === 1 ? 0 : 2) + 45}px`, // 구역을 4개로 나누어 2번인덱스는 그 중 2번째 구역으로
+    };
+  } else if (idx <= 6) {
+    return {
+      top: `${(treeSize.value.height / 4) * 2 - 80}px`,
+      left: `${(treeSize.value.width / 4) * (idx - 3)}px`, // 4개가 일정한 간격으로
     };
   } else {
     return {
-      top: `${60 * Math.floor(idx / 4 + 1)}px`,
-      left: `${(treeSize.value.width / 4) * ((idx % 4) - 1)}px`,
+      top: `${(treeSize.value.height / 4) * 3 - 80}px`,
+      left: `${((treeSize.value.width - 60) / 3) * (idx - 7) + 45}px`, // 맨 아래 층에 3개가 정렬되도록
     };
   }
 };
@@ -125,9 +160,9 @@ const getTreeItemPosition = (idx: number) => {
 }
 
 // TODO: 추후 삭제
-.tree-detail-content,
-.info,
-.body {
-  border: solid 1px black;
-}
+// .tree-detail-content,
+// .info,
+// .body {
+//   border: solid 1px black;
+// }
 </style>

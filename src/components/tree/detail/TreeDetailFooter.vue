@@ -34,7 +34,7 @@ defineProps<{
 }
 
 // TODO: 추후 삭제
-.tree-detail-footer {
-  border: 1px solid black;
-}
+// .tree-detail-footer {
+//   border: 1px solid black;
+// }
 </style>
