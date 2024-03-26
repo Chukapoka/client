@@ -1,11 +1,23 @@
 <template>
   <div class="tree-detail-footer">
-    <!-- <template>
-      <cp-button type="solid">초대하기</cp-button>
-    </template> -->
-    <cp-icon-circle-button class="menu__container">
-      <icon-plus />
-    </cp-icon-circle-button>
+    <div class="menu">
+      <div class="menu__main-icon-wrap focused-icon">
+        <cp-icon-circle-button>
+          <icon-plus />
+        </cp-icon-circle-button>
+      </div>
+      <div class="menu__sub-icon-wrap">
+        <cp-icon-circle-button bg-color="var(--cp-color-white)" hover-bg-color="var(--cp-color-gray-100)">
+          <icon-add-post />
+        </cp-icon-circle-button>
+        <cp-icon-circle-button bg-color="var(--cp-color-white)" hover-bg-color="var(--cp-color-gray-100)">
+          <icon-invite />
+        </cp-icon-circle-button>
+        <cp-icon-circle-button bg-color="var(--cp-color-white)" hover-bg-color="var(--cp-color-gray-100)">
+          <icon-share />
+        </cp-icon-circle-button>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -22,6 +34,9 @@ export default defineComponent({
 
 import CpIconCircleButton from "@/components/commons/CpIconCircleButton.vue";
 import IconPlus from "@/components/commons/images/IconPlus.vue";
+import IconAddPost from "@/components/commons/images/IconAddPost.vue";
+import IconInvite from "@/components/commons/images/IconInvite.vue";
+import IconShare from "@/components/commons/images/IconShare.vue";
 
 
 import { defineProps } from "vue";
@@ -38,15 +53,29 @@ defineProps<{
 
   display: flex;
   justify-content: center;
+  align-items: center;  
+  
+}
+.menu{
+  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-
-  .menu {
-    &__container:focus {
+  gap: 0.75rem;
+  &__main-icon-wrap{
+    z-index: 1;
+    position: relative;
+    :focus {
       transform: rotate(45deg);
     }
-    &__item:active {
+    :focus ~ .menu__sub-icon-wrap {
+      // position: relative;
+    }
+    :active {
       transform: scale(0.95);
     }
+  }
+  &__sub-icon-wrap{
+    z-index: 0;
   }
 }
 
