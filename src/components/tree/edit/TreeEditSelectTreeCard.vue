@@ -4,14 +4,20 @@
  -->
 <template>
   <div class="wrap">
-    <el-button plain :class="classArr" :style="innerStyle" :disabled="disabled">
+    <el-button
+      plain
+      :class="classArr"
+      :style="innerStyle"
+      :disabled="disabled"
+      @click="$emit('click')"
+    >
       <slot />
     </el-button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed } from "vue";
+import { defineProps, defineEmits, computed, withDefaults } from "vue";
 import { ElButton } from "element-plus";
 
 const props = withDefaults(
